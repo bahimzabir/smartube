@@ -47,16 +47,25 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block`}>
-                    <div className='grid justify-center md:flex m-2 p-4 space-x-2 md:space-x-3 font-semibold md:ml-4'>
+                    <div className='flex flex-col items-center justify-center md:flex-row m-2 mb-0 p-4 space-x-2 md:space-x-3 font-semibold md:ml-4'>
                         {menu.map((item, index) => (
-                            <a className='hover:animate-pulse ml-2 p-4 md:p-2' href={item.href} key={index}>
+                            <a className='text-center hover:animate-pulse md:ml-2 p-4 md:p-2' href={item.href} key={index}>
                                 {item.name}
                             </a>
                         ))}
-                        <div className='cursor-pointer ml-3 pl-6 md:pl-0 p-4 md:p-2'>
+                        <div className='flex space-x-6 md:space-x-0 justify-center'>
+                            <div className='pb-4 pt-4 md:p-2'>
+                                <button className='cursor-pointer md:p-2 w-24 rounded-lg bg-red-500 hover:bg-red-400 h-10' >Login</button>
+                            </div>
+                            <div className='pb-4 pt-4 md:p-2'>
+                                <button className='cursor-pointer md:p-2 w-24 rounded-lg bg-red-500 hover:bg-red-400 h-10' >Register</button>
+                            </div>
+                        </div>
+                        {/* <div className='items-center justify-center flex mt-2 md:mt-0'>
                             {theme === 'dark' ? <HiOutlineSun className='hover:animate-spin' size={30} color={"white"} onClick={() => { setTheme('light'); console.log(theme) }} /> :
                                 <HiOutlineMoon className='hover:animate-pulse' size={30} color={"black"} onClick={() => { setTheme('dark'); console.log(theme) }} />}
-                        </div>
+                        </div> */}
+                        
                     </div>
                 </div>
             </div>
